@@ -12,9 +12,14 @@
   class="body-container body-container--contact"
 %}
 
-  {# Cards #}
-
-  {% include_dnd_partial path="../sections/cards.html" %}
+  {{# Render custom objects by query #}
+{% set contacts = crm_objects("contact", "company=Wunder") %}
+<h3>{{contacts.total}} Team:<h3>
+  <ul>
+    {% for contact in contacts.results %}
+    <li>Name: {{ contact.firstname }}</li>
+    {% endfor %}
+  <ul>
 
 {% end_dnd_area %}
 {% endblock body %}
