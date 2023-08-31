@@ -12,13 +12,5 @@
   class="body-container body-container--contact"
 %}
 
-{% set contacts = crm_objects("contact", "company=Wunder") %}
-<h3>{{contacts.total}} Team:</h3>
-  <ul>
-    {% for contact in contacts.results %}
-    <li>Name: {{ contact.firstname }}</li>
-    {% endfor %}
-  </ul>
-
 {% end_dnd_area %}
 {% endblock body %}
