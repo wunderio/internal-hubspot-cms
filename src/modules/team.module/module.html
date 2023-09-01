@@ -1,4 +1,4 @@
-{% set contacts = crm_objects("contact", "company=Wunder") %}
+{% set contacts = crm_objects("contact") %}
 <h3>{{contacts.total}} Team:</h3>
 <ul>
     {% for contact in contacts.results %}
