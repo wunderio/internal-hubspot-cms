@@ -5,3 +5,11 @@
     <li>Name: {{ contact.firstname }}</li>
     {% endfor %}
 </ul>
+<h2>Test 2</h2>
+{% set companies = crm_objects("companies", "limit=10") %}
+<h3>{{companies.total}} Team:</h3>
+<ul>
+    {% for company in companies.results %}
+    <li>Name: {{ company.name }}</li>
+    {% endfor %}
+</ul>
